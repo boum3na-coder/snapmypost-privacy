@@ -1,18 +1,154 @@
+
 SnapMyPost Privacy Policy
-Draft for publisher review — 2 November 2026.
-Publisher: [PUBLISHER LEGAL NAME]  
-Support/privacy contact: [REAL SUPPORT EMAIL OR CONTACT URL]  
-Public policy URL: [PUBLIC HTTPS PRIVACY POLICY URL]
-What the extension accesses
-When you capture or select a post, SnapMyPost reads its rendered structure, displayed author/username, visible text, links, timestamps when explicitly available, and displayed media references. It captures the active browser tab's pixels and crops/stitches the selected region. A timestamp that is unavailable is stored as missing; a page URL used instead of a post permalink is labeled as a fallback. Video content is captured as still frames. Automatic expansion and scrolling may cause the website itself to load additional content under that site's policy.
-All-website access allows existing cross-site selection shortcuts, area capture and optional hover controls. It does not cause the extension to record normal browsing history. The extension does not bypass authentication, private-content restrictions, DRM or website access controls.
-Local processing and retention
-Image processing, clipboard writes, SHA-256 hashing, metadata generation and editing run locally. Captures and their titles/metadata are temporarily held in browser session storage for the editor/copy workflow. Captures expire after 30 minutes; indexed expired records are cleaned up during subsequent captures. The editor or batch-results page removes source records after reading them. A small status/index entry may remain until cleanup or the browser clears extension session storage.
-Screenshot history is off by default. If you enable it, original PNGs, extracted metadata, names, tags, notes and collection labels are retained in the extension's IndexedDB database until you delete them. Research mode adds original-PNG SHA-256 checksums to newly archived records. Turning history off stops new retention; it does not delete existing records. Use History → Delete/Delete all to remove saved records. Uninstalling clears extension-managed local storage, subject to browser behavior.
-Language, theme, capture/export preferences, shortcuts and any optional feedback URL remain in local extension storage. Downloads and copied images are controlled by your operating system and other applications and are not deleted by the extension. Clipboard history/cloud sync may retain content under your OS settings.
-Transmission
-The capture workflow contains no screenshot-upload service, analytics SDK, advertising SDK, developer telemetry, remote executable code, remote fonts or remote translation requests. No screenshots, extracted text, URLs or metadata are automatically sent to the developer. Bundled locale catalogs provide ordinary interface translations. Website resource loading remains governed by the website and browser.
-The optional feedback tool downloads a local JSON report containing product/version, chosen language and the message you enter. It does not automatically attach screenshots, visited URLs or browsing history. It sends nothing automatically. If you configure and open an HTTPS feedback form, the extension opens it without attaching report data; that provider may receive connection information and anything you explicitly submit. There is no default feedback provider. The publisher must identify any future default provider and its policy before shipping it.
-Choices and disclosure
-You decide when to capture, copy, download, share, archive or export metadata. A focused extension popup may briefly open when copying without the editor, because native PNG clipboard writing needs a focused document. Notifications and the copy popup have an eight-second lifetime; failures provide a retry where possible.
-The publisher must verify these disclosures, supply real identity/contact information and host this completed policy at a public HTTPS URL before publishing. This draft is not legal advice or evidence of store approval.
+
+Last updated: November 5, 2026
+
+Publisher: Smail Smail
+Contact: Boum3na@gmail.com
+
+1. Overview
+
+SnapMyPost is a browser extension that helps users capture, edit, save, and organize screenshots of social media posts and visible webpage content.
+
+SnapMyPost is designed to process screenshots locally in the browser without requiring users to create an account or upload their captures to an external server.
+
+This Privacy Policy explains what information the extension accesses, how that information is used, and how users can manage locally stored data.
+
+2. Information Accessed
+
+When you initiate a capture, SnapMyPost may access the visible structure and content of the selected webpage, including:
+
+• Displayed text and post content.
+• Publicly visible usernames and author information.
+• Available timestamps and links.
+• Displayed media references.
+• Selected webpage regions and rendered pixels.
+
+This information is used to identify content, generate screenshots, and provide available capture metadata.
+
+If a post permalink is unavailable, the webpage URL may be recorded as a fallback and identified accordingly.
+
+Video content is captured as still images.
+
+Some capture operations may expand content or scroll webpages, which can cause the website to load additional information.
+
+SnapMyPost does not bypass authentication, access restrictions, digital rights management, or website security controls.
+
+3. Local Processing and Temporary Storage
+
+Screenshot processing, image editing, metadata generation, and clipboard operations are performed locally within the browser.
+
+Temporary capture data may be stored in browser session storage to support screenshot editing, copying, and exporting.
+
+Temporary captures expire after approximately 30 minutes. Expired records are removed during subsequent cleanup operations, and some temporary status information may remain until browser storage is cleared.
+
+The extension does not require cloud processing to generate screenshots.
+
+4. Optional Screenshot History
+
+Screenshot history is disabled by default.
+
+When enabled, SnapMyPost can save captured images and associated information locally using the browser's IndexedDB storage.
+
+Saved information may include:
+
+• Original screenshot images.
+• Capture metadata and titles.
+• User-created tags and notes.
+• Collection labels.
+• SHA-256 checksums when Research Mode is enabled.
+
+Saved history remains available until the user deletes it.
+
+Disabling history prevents new captures from being automatically archived but does not delete previously saved records.
+
+Users can remove individual captures or clear their saved history through the extension's history management tools.
+
+Uninstalling the extension generally removes its extension-managed local storage, subject to browser behavior.
+
+5. Preferences and Settings
+
+SnapMyPost stores user preferences locally, including:
+
+• Interface language.
+• Theme preferences.
+• Capture settings.
+• Export format preferences.
+• Keyboard shortcut settings.
+• Optional feedback configuration.
+
+These settings are used to maintain the user's preferred experience across browser sessions.
+
+6. Data Transmission and Third-Party Services
+
+SnapMyPost does not automatically transmit screenshots, extracted text, webpage URLs, or capture metadata to the publisher.
+
+The screenshot capture workflow does not use a cloud screenshot-processing service, advertising SDK, analytics SDK, or developer telemetry.
+
+Interface translations are provided through locally bundled language resources.
+
+Websites may continue to load their own resources according to their respective privacy policies and normal browser behavior.
+
+SnapMyPost does not control how third-party websites process information.
+
+7. Optional Feedback
+
+SnapMyPost includes an optional feedback function.
+
+Users may generate a local JSON feedback report containing application information, the selected interface language, and a message entered by the user.
+
+The report does not automatically include screenshots, browsing history, or visited webpage URLs.
+
+No feedback is transmitted automatically.
+
+If users open an externally configured HTTPS feedback form, the external provider may receive connection information and any information voluntarily submitted by the user.
+
+8. Clipboard, Downloads, and Exports
+
+Users can copy screenshots to the system clipboard or download them in supported formats.
+
+Exported files may contain captured content and associated metadata depending on the selected export options.
+
+Once content is copied, downloaded, or shared, its storage and handling may be governed by the operating system or receiving application.
+
+SnapMyPost cannot automatically delete files or clipboard history maintained outside the extension.
+
+9. User Control
+
+Users decide when to:
+
+• Capture webpage content.
+• Copy screenshots.
+• Download or export files.
+• Enable screenshot history.
+• Save or remove archived captures.
+• Export available metadata.
+• Share captured content.
+
+Users can change their preferences through the extension's settings.
+
+10. Data Security
+
+SnapMyPost processes captured content locally and does not require cloud transmission for screenshot functionality.
+
+Locally stored information remains subject to the security controls of the browser, operating system, and device.
+
+Users should avoid capturing or sharing sensitive personal information unless they have permission to do so.
+
+11. Chrome Web Store User Data Policy
+
+The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.
+
+Information accessed by SnapMyPost is used only to provide its described screenshot capture, editing, export, and organization features.
+
+12. Changes to This Privacy Policy
+
+This Privacy Policy may be updated to reflect changes in SnapMyPost's functionality, data handling, or applicable requirements.
+
+The latest version will be available on the extension's official privacy policy webpage.
+
+13. Contact
+
+For privacy-related questions or support requests, contact:
+
+Boum3na@gmail.com
