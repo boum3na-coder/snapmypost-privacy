@@ -1,154 +1,1094 @@
 
-SnapMyPost Privacy Policy
-
-Last updated: November 5, 2026
-
-Publisher: Smail Smail
-Contact: Boum3na@gmail.com
-
-1. Overview
-
-SnapMyPost is a browser extension that helps users capture, edit, save, and organize screenshots of social media posts and visible webpage content.
-
-SnapMyPost is designed to process screenshots locally in the browser without requiring users to create an account or upload their captures to an external server.
-
-This Privacy Policy explains what information the extension accesses, how that information is used, and how users can manage locally stored data.
-
-2. Information Accessed
-
-When you initiate a capture, SnapMyPost may access the visible structure and content of the selected webpage, including:
-
-• Displayed text and post content.
-• Publicly visible usernames and author information.
-• Available timestamps and links.
-• Displayed media references.
-• Selected webpage regions and rendered pixels.
-
-This information is used to identify content, generate screenshots, and provide available capture metadata.
-
-If a post permalink is unavailable, the webpage URL may be recorded as a fallback and identified accordingly.
-
-Video content is captured as still images.
-
-Some capture operations may expand content or scroll webpages, which can cause the website to load additional information.
-
-SnapMyPost does not bypass authentication, access restrictions, digital rights management, or website security controls.
-
-3. Local Processing and Temporary Storage
-
-Screenshot processing, image editing, metadata generation, and clipboard operations are performed locally within the browser.
-
-Temporary capture data may be stored in browser session storage to support screenshot editing, copying, and exporting.
-
-Temporary captures expire after approximately 30 minutes. Expired records are removed during subsequent cleanup operations, and some temporary status information may remain until browser storage is cleared.
-
-The extension does not require cloud processing to generate screenshots.
-
-4. Optional Screenshot History
-
-Screenshot history is disabled by default.
-
-When enabled, SnapMyPost can save captured images and associated information locally using the browser's IndexedDB storage.
-
-Saved information may include:
-
-• Original screenshot images.
-• Capture metadata and titles.
-• User-created tags and notes.
-• Collection labels.
-• SHA-256 checksums when Research Mode is enabled.
-
-Saved history remains available until the user deletes it.
-
-Disabling history prevents new captures from being automatically archived but does not delete previously saved records.
-
-Users can remove individual captures or clear their saved history through the extension's history management tools.
-
-Uninstalling the extension generally removes its extension-managed local storage, subject to browser behavior.
-
-5. Preferences and Settings
-
-SnapMyPost stores user preferences locally, including:
-
-• Interface language.
-• Theme preferences.
-• Capture settings.
-• Export format preferences.
-• Keyboard shortcut settings.
-• Optional feedback configuration.
-
-These settings are used to maintain the user's preferred experience across browser sessions.
-
-6. Data Transmission and Third-Party Services
-
-SnapMyPost does not automatically transmit screenshots, extracted text, webpage URLs, or capture metadata to the publisher.
-
-The screenshot capture workflow does not use a cloud screenshot-processing service, advertising SDK, analytics SDK, or developer telemetry.
-
-Interface translations are provided through locally bundled language resources.
-
-Websites may continue to load their own resources according to their respective privacy policies and normal browser behavior.
-
-SnapMyPost does not control how third-party websites process information.
-
-7. Optional Feedback
-
-SnapMyPost includes an optional feedback function.
-
-Users may generate a local JSON feedback report containing application information, the selected interface language, and a message entered by the user.
-
-The report does not automatically include screenshots, browsing history, or visited webpage URLs.
-
-No feedback is transmitted automatically.
-
-If users open an externally configured HTTPS feedback form, the external provider may receive connection information and any information voluntarily submitted by the user.
-
-8. Clipboard, Downloads, and Exports
-
-Users can copy screenshots to the system clipboard or download them in supported formats.
-
-Exported files may contain captured content and associated metadata depending on the selected export options.
-
-Once content is copied, downloaded, or shared, its storage and handling may be governed by the operating system or receiving application.
-
-SnapMyPost cannot automatically delete files or clipboard history maintained outside the extension.
-
-9. User Control
-
-Users decide when to:
-
-• Capture webpage content.
-• Copy screenshots.
-• Download or export files.
-• Enable screenshot history.
-• Save or remove archived captures.
-• Export available metadata.
-• Share captured content.
-
-Users can change their preferences through the extension's settings.
-
-10. Data Security
-
-SnapMyPost processes captured content locally and does not require cloud transmission for screenshot functionality.
-
-Locally stored information remains subject to the security controls of the browser, operating system, and device.
-
-Users should avoid capturing or sharing sensitive personal information unless they have permission to do so.
-
-11. Chrome Web Store User Data Policy
-
-The use of information received from Google APIs will adhere to the Chrome Web Store User Data Policy, including the Limited Use requirements.
-
-Information accessed by SnapMyPost is used only to provide its described screenshot capture, editing, export, and organization features.
-
-12. Changes to This Privacy Policy
-
-This Privacy Policy may be updated to reflect changes in SnapMyPost's functionality, data handling, or applicable requirements.
-
-The latest version will be available on the extension's official privacy policy webpage.
-
-13. Contact
-
-For privacy-related questions or support requests, contact:
-
-Boum3na@gmail.com
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d141f">
+  <meta name="description" content="SnapMyPost Privacy Policy">
+  <title>Privacy Policy | SnapMyPost</title>
+
+  <style>
+    :root {
+      --bg: #0d141f;
+      --panel: #162230;
+      --panel-light: #1b2939;
+      --text: #f5f8fc;
+      --muted: #b6c3d2;
+      --mint: #94f4d0;
+      --border: #3b5061;
+      --radius: 19px;
+      color-scheme: dark;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 35px;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(
+          ellipse 70% 35% at 80% -12%,
+          #1b3440 0%,
+          transparent 75%
+        ),
+        var(--bg);
+      font-family: Inter, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--mint);
+      outline-offset: 4px;
+    }
+
+    .container {
+      max-width: 1180px;
+      margin: auto;
+      padding: 0 28px;
+    }
+
+    /* Header */
+
+    .topbar {
+      border-bottom: 1px solid #283646;
+      background: rgba(17, 26, 37, 0.85);
+      backdrop-filter: blur(14px);
+    }
+
+    .bar-inner {
+      min-height: 92px;
+      display: flex;
+      align-items: center;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: -0.9px;
+      text-decoration: none;
+    }
+
+    .logo {
+      width: 53px;
+      height: 53px;
+      flex: none;
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 75px 0 50px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--mint);
+      font-size: 13px;
+      font-weight: 750;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--mint);
+      box-shadow: 0 0 18px #94f4d07a;
+    }
+
+    h1 {
+      font-size: clamp(45px, 6.3vw, 76px);
+      font-weight: 850;
+      line-height: 1.09;
+      letter-spacing: -0.055em;
+      margin: 18px 0 20px;
+    }
+
+    h1 span {
+      color: var(--mint);
+    }
+
+    .hero-description {
+      max-width: 680px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(17px, 2vw, 21px);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 27px;
+    }
+
+    .chip {
+      border: 1px solid var(--border);
+      background: #192633;
+      color: #d7e3ee;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+    }
+
+    .chip strong {
+      color: var(--text);
+    }
+
+    /* Main layout */
+
+    .body-grid {
+      display: grid;
+      grid-template-columns: 260px minmax(0, 1fr);
+      gap: 32px;
+      align-items: start;
+      padding-bottom: 90px;
+    }
+
+    /* Sidebar */
+
+    .sidebar {
+      position: sticky;
+      top: 25px;
+      border: 1px solid var(--border);
+      background: linear-gradient(150deg, #1a2735, #121e2b);
+      border-radius: var(--radius);
+      padding: 21px 15px;
+    }
+
+    .sidebar-heading {
+      padding: 0 12px 11px;
+      color: var(--mint);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 550;
+      line-height: 1.4;
+      transition: background 0.2s, color 0.2s;
+    }
+
+    .nav-link span {
+      font-size: 11px;
+      color: #7293a2;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .nav-link:hover,
+    .nav-link.active {
+      background: #263c49;
+      color: var(--mint);
+    }
+
+    .nav-link.active span {
+      color: var(--mint);
+    }
+
+    /* Article */
+
+    .article {
+      min-width: 0;
+    }
+
+    .notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 17px;
+      background: linear-gradient(115deg, #1c3840, #1b2b35);
+      border: 1px solid #4c8c82;
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      margin-bottom: 18px;
+    }
+
+    .notice-icon {
+      font-size: 25px;
+      line-height: 1.25;
+      color: var(--mint);
+    }
+
+    .notice h2 {
+      font-size: 17px;
+      margin: 0 0 4px;
+    }
+
+    .notice p {
+      margin: 0;
+      font-size: 14px;
+      color: #c8d9dd;
+    }
+
+    .policy-card {
+      scroll-margin-top: 24px;
+      background: linear-gradient(145deg, #1b2938, #15212e);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 32px;
+      margin-bottom: 17px;
+      box-shadow: 0 12px 32px #00000014;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 17px;
+    }
+
+    .section-number {
+      display: grid;
+      place-items: center;
+      flex: none;
+      min-width: 37px;
+      height: 37px;
+      background: var(--mint);
+      color: #10221e;
+      border-radius: 9px;
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(19px, 2.5vw, 24px);
+      font-weight: 750;
+      line-height: 1.4;
+      letter-spacing: -0.035em;
+      margin: 0;
+    }
+
+    .section-content {
+      color: #cbd5df;
+      font-size: 15px;
+    }
+
+    .section-content p {
+      margin: 0 0 13px;
+    }
+
+    .section-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-content ul {
+      margin: 2px 0 18px;
+      padding-left: 22px;
+    }
+
+    .section-content li {
+      padding: 3px 0 3px 5px;
+    }
+
+    .section-content li::marker {
+      color: var(--mint);
+    }
+
+    .email-link {
+      color: var(--mint);
+      font-weight: 700;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Footer */
+
+    .footer {
+      border-top: 1px solid #263949;
+      padding: 25px 0 35px;
+      color: #92a7b7;
+      font-size: 13px;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .footer strong {
+      color: var(--mint);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 860px) {
+      .body-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: relative;
+        top: auto;
+      }
+
+      .sidebar nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        padding: 52px 0 35px;
+      }
+    }
+
+    @media (max-width: 530px) {
+      .container {
+        padding: 0 18px;
+      }
+
+      .brand {
+        font-size: 22px;
+        gap: 10px;
+      }
+
+      .logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .bar-inner {
+        min-height: 72px;
+      }
+
+      .sidebar nav {
+        grid-template-columns: 1fr;
+      }
+
+      .policy-card {
+        padding: 22px 19px;
+      }
+
+      .notice {
+        padding: 18px;
+      }
+
+      .hero {
+        padding: 43px 0 29px;
+      }
+
+      .section-heading {
+        gap: 11px;
+      }
+
+      .section-content {
+        font-size: 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .nav-link {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- BRAND HEADER -->
+
+  <header class="topbar">
+    <div class="container bar-inner">
+
+      <a class="brand" href="#top" aria-label="SnapMyPost">
+
+        <svg class="logo" viewBox="0 0 64 64"
+             fill="none" aria-hidden="true">
+
+          <path
+            d="M8 23V15a7 7 0 0 1 7-7h8
+               M41 8h8a7 7 0 0 1 7 7v8
+               M56 41v8a7 7 0 0 1-7 7h-8
+               M23 56h-8a7 7 0 0 1-7-7v-8"
+            stroke="#94f4d0"
+            stroke-width="6"
+            stroke-linecap="round"
+          />
+
+          <rect x="18" y="20" width="28" height="25"
+                rx="4" fill="#f4f7fb"/>
+
+          <circle cx="26" cy="29" r="3" fill="#152431"/>
+
+          <path d="M33 28h8M24 37h17"
+                stroke="#152431"
+                stroke-width="3"
+                stroke-linecap="round"/>
+
+        </svg>
+
+        <span>SnapMyPost</span>
+      </a>
+
+    </div>
+  </header>
+
+  <main id="top" class="container">
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+      <div class="eyebrow">Your privacy matters</div>
+
+      <h1>Privacy <span>Policy.</span></h1>
+
+      <p class="hero-description">
+        Capture the post. Keep the context.
+        Understand how SnapMyPost handles content,
+        screenshots, and data on your device.
+      </p>
+
+      <div class="meta">
+        <span class="chip">
+          <strong>Last updated:</strong> November 5, 2026
+        </span>
+
+        <span class="chip">
+          <strong>Publisher:</strong> Smail Smail
+        </span>
+      </div>
+
+    </div>
+
+    <div class="body-grid">
+
+      <!-- NAVIGATION -->
+
+      <aside class="sidebar" aria-label="Policy contents">
+
+        <div class="sidebar-heading">On this page</div>
+
+        <nav>
+          <a href="#section-1" class="nav-link">
+            <span>01</span> Overview
+          </a>
+
+          <a href="#section-2" class="nav-link">
+            <span>02</span> Information Accessed
+          </a>
+
+          <a href="#section-3" class="nav-link">
+            <span>03</span> Local Processing and Temporary Storage
+          </a>
+
+          <a href="#section-4" class="nav-link">
+            <span>04</span> Optional Screenshot History
+          </a>
+
+          <a href="#section-5" class="nav-link">
+            <span>05</span> Preferences and Settings
+          </a>
+
+          <a href="#section-6" class="nav-link">
+            <span>06</span> Data Transmission and Third-Party Services
+          </a>
+
+          <a href="#section-7" class="nav-link">
+            <span>07</span> Optional Feedback
+          </a>
+
+          <a href="#section-8" class="nav-link">
+            <span>08</span> Clipboard, Downloads, and Exports
+          </a>
+
+          <a href="#section-9" class="nav-link">
+            <span>09</span> User Control
+          </a>
+
+          <a href="#section-10" class="nav-link">
+            <span>10</span> Data Security
+          </a>
+
+          <a href="#section-11" class="nav-link">
+            <span>11</span> Chrome Web Store User Data Policy
+          </a>
+
+          <a href="#section-12" class="nav-link">
+            <span>12</span> Changes to This Privacy Policy
+          </a>
+
+          <a href="#section-13" class="nav-link">
+            <span>13</span> Contact
+          </a>
+        </nav>
+
+      </aside>
+
+      <!-- PRIVACY POLICY CONTENT -->
+
+      <div class="article">
+
+        <div class="notice">
+          <span class="notice-icon" aria-hidden="true">▣</span>
+
+          <div>
+            <h2>Built for local capture</h2>
+
+            <p>
+              SnapMyPost is designed to process screenshots
+              locally in your browser, without requiring an
+              account or uploading captures to an external server.
+            </p>
+          </div>
+        </div>
+
+        <!-- SECTION 1 -->
+
+        <section id="section-1" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">01</span>
+            <h2>Overview</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              SnapMyPost is a browser extension that helps users
+              capture, edit, save, and organize screenshots of
+              social media posts and visible webpage content.
+            </p>
+
+            <p>
+              SnapMyPost is designed to process screenshots locally
+              in the browser without requiring users to create
+              an account or upload their captures to an external server.
+            </p>
+
+            <p>
+              This Privacy Policy explains what information
+              the extension accesses, how that information is used,
+              and how users can manage locally stored data.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 2 -->
+
+        <section id="section-2" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">02</span>
+            <h2>Information Accessed</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              When you initiate a capture, SnapMyPost may access
+              the visible structure and content of the selected
+              webpage, including:
+            </p>
+
+            <ul>
+              <li>Displayed text and post content.</li>
+              <li>Publicly visible usernames and author information.</li>
+              <li>Available timestamps and links.</li>
+              <li>Displayed media references.</li>
+              <li>Selected webpage regions and rendered pixels.</li>
+            </ul>
+
+            <p>
+              This information is used to identify content,
+              generate screenshots, and provide available
+              capture metadata.
+            </p>
+
+            <p>
+              If a post permalink is unavailable, the webpage URL
+              may be recorded as a fallback and identified accordingly.
+            </p>
+
+            <p>Video content is captured as still images.</p>
+
+            <p>
+              Some capture operations may expand content or scroll
+              webpages, which can cause the website to load
+              additional information.
+            </p>
+
+            <p>
+              SnapMyPost does not bypass authentication,
+              access restrictions, digital rights management,
+              or website security controls.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 3 -->
+
+        <section id="section-3" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">03</span>
+            <h2>Local Processing and Temporary Storage</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              Screenshot processing, image editing, metadata generation,
+              and clipboard operations are performed locally
+              within the browser.
+            </p>
+
+            <p>
+              Temporary capture data may be stored in browser
+              session storage to support screenshot editing,
+              copying, and exporting.
+            </p>
+
+            <p>
+              Temporary captures expire after approximately 30 minutes.
+              Expired records are removed during subsequent cleanup
+              operations, and some temporary status information may
+              remain until browser storage is cleared.
+            </p>
+
+            <p>
+              The extension does not require cloud processing
+              to generate screenshots.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 4 -->
+
+        <section id="section-4" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">04</span>
+            <h2>Optional Screenshot History</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>Screenshot history is disabled by default.</p>
+
+            <p>
+              When enabled, SnapMyPost can save captured images
+              and associated information locally using
+              the browser's IndexedDB storage.
+            </p>
+
+            <p>Saved information may include:</p>
+
+            <ul>
+              <li>Original screenshot images.</li>
+              <li>Capture metadata and titles.</li>
+              <li>User-created tags and notes.</li>
+              <li>Collection labels.</li>
+              <li>SHA-256 checksums when Research Mode is enabled.</li>
+            </ul>
+
+            <p>
+              Saved history remains available until the user deletes it.
+            </p>
+
+            <p>
+              Disabling history prevents new captures from being
+              automatically archived but does not delete
+              previously saved records.
+            </p>
+
+            <p>
+              Users can remove individual captures or clear their
+              saved history through the extension's history
+              management tools.
+            </p>
+
+            <p>
+              Uninstalling the extension generally removes its
+              extension-managed local storage, subject to browser behavior.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 5 -->
+
+        <section id="section-5" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">05</span>
+            <h2>Preferences and Settings</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              SnapMyPost stores user preferences locally, including:
+            </p>
+
+            <ul>
+              <li>Interface language.</li>
+              <li>Theme preferences.</li>
+              <li>Capture settings.</li>
+              <li>Export format preferences.</li>
+              <li>Keyboard shortcut settings.</li>
+              <li>Optional feedback configuration.</li>
+            </ul>
+
+            <p>
+              These settings are used to maintain the user's
+              preferred experience across browser sessions.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 6 -->
+
+        <section id="section-6" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">06</span>
+            <h2>Data Transmission and Third-Party Services</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              SnapMyPost does not automatically transmit screenshots,
+              extracted text, webpage URLs, or capture metadata
+              to the publisher.
+            </p>
+
+            <p>
+              The screenshot capture workflow does not use a cloud
+              screenshot-processing service, advertising SDK,
+              analytics SDK, or developer telemetry.
+            </p>
+
+            <p>
+              Interface translations are provided through
+              locally bundled language resources.
+            </p>
+
+            <p>
+              Websites may continue to load their own resources
+              according to their respective privacy policies
+              and normal browser behavior.
+            </p>
+
+            <p>
+              SnapMyPost does not control how third-party websites
+              process information.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 7 -->
+
+        <section id="section-7" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">07</span>
+            <h2>Optional Feedback</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              SnapMyPost includes an optional feedback function.
+            </p>
+
+            <p>
+              Users may generate a local JSON feedback report
+              containing application information, the selected
+              interface language, and a message entered by the user.
+            </p>
+
+            <p>
+              The report does not automatically include screenshots,
+              browsing history, or visited webpage URLs.
+            </p>
+
+            <p>No feedback is transmitted automatically.</p>
+
+            <p>
+              If users open an externally configured HTTPS feedback form,
+              the external provider may receive connection information
+              and any information voluntarily submitted by the user.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 8 -->
+
+        <section id="section-8" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">08</span>
+            <h2>Clipboard, Downloads, and Exports</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              Users can copy screenshots to the system clipboard
+              or download them in supported formats.
+            </p>
+
+            <p>
+              Exported files may contain captured content
+              and associated metadata depending on the selected
+              export options.
+            </p>
+
+            <p>
+              Once content is copied, downloaded, or shared,
+              its storage and handling may be governed by
+              the operating system or receiving application.
+            </p>
+
+            <p>
+              SnapMyPost cannot automatically delete files
+              or clipboard history maintained outside the extension.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 9 -->
+
+        <section id="section-9" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">09</span>
+            <h2>User Control</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>Users decide when to:</p>
+
+            <ul>
+              <li>Capture webpage content.</li>
+              <li>Copy screenshots.</li>
+              <li>Download or export files.</li>
+              <li>Enable screenshot history.</li>
+              <li>Save or remove archived captures.</li>
+              <li>Export available metadata.</li>
+              <li>Share captured content.</li>
+            </ul>
+
+            <p>
+              Users can change their preferences
+              through the extension's settings.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 10 -->
+
+        <section id="section-10" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">10</span>
+            <h2>Data Security</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              SnapMyPost processes captured content locally
+              and does not require cloud transmission
+              for screenshot functionality.
+            </p>
+
+            <p>
+              Locally stored information remains subject
+              to the security controls of the browser,
+              operating system, and device.
+            </p>
+
+            <p>
+              Users should avoid capturing or sharing sensitive
+              personal information unless they have permission to do so.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 11 -->
+
+        <section id="section-11" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">11</span>
+            <h2>Chrome Web Store User Data Policy</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              The use of information received from Google APIs
+              will adhere to the Chrome Web Store User Data Policy,
+              including the Limited Use requirements.
+            </p>
+
+            <p>
+              Information accessed by SnapMyPost is used only
+              to provide its described screenshot capture,
+              editing, export, and organization features.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 12 -->
+
+        <section id="section-12" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">12</span>
+            <h2>Changes to This Privacy Policy</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              This Privacy Policy may be updated to reflect changes
+              in SnapMyPost's functionality, data handling,
+              or applicable requirements.
+            </p>
+
+            <p>
+              The latest version will be available on the extension's
+              official privacy policy webpage.
+            </p>
+
+          </div>
+        </section>
+
+        <!-- SECTION 13 -->
+
+        <section id="section-13" class="policy-card">
+
+          <div class="section-heading">
+            <span class="section-number">13</span>
+            <h2>Contact</h2>
+          </div>
+
+          <div class="section-content">
+
+            <p>
+              For privacy-related questions or support requests,
+              contact:
+            </p>
+
+            <p>
+              <a class="email-link" href="mailto:Boum3na@gmail.com">
+                Boum3na@gmail.com
+              </a>
+            </p>
+
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <span>© SnapMyPost · Privacy Policy</span>
+
+      <span>
+        Questions?
+        <a href="mailto:Boum3na@gmail.com">
+          <strong>Boum3na@gmail.com</strong>
+        </a>
+      </span>
+
+    </div>
+  </footer>
+
+  <!-- ACTIVE NAVIGATION -->
+
+  <script>
+    const links = [
+      ...document.querySelectorAll(".nav-link")
+    ];
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        entries => {
+          const visible = entries
+            .filter(entry => entry.isIntersecting)
+            .sort(
+              (a, b) =>
+                a.boundingClientRect.top -
+                b.boundingClientRect.top
+            );
+
+          if (visible.length) {
+            links.forEach(link => {
+              link.classList.toggle(
+                "active",
+                link.hash === "#" + visible[0].target.id
+              );
+            });
+          }
+        },
+        {
+          rootMargin: "-8% 0px -70% 0px"
+        }
+      );
+
+      document
+        .querySelectorAll(".policy-card")
+        .forEach(section => observer.observe(section));
+    }
+  </script>
+
+</body>
+</html>
